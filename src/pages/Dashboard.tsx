@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { LineChart,PieChart } from "../components/Charts";
-import AdminSidebar from "../components/AdminSidebar";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { BiMaleFemale } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import { FaRegBell } from "react-icons/fa";
-import userimg from "../assets/userfinal.png";
 import { HiTrendingDown, HiTrendingUp } from "react-icons/hi";
 import data from "../assets/data.json";
-import { BiMaleFemale } from "react-icons/bi";
+import userimg from "../assets/userfinal.png";
+import AdminSidebar from "../components/AdminSidebar";
+import { LineChart, PieChart } from "../components/Charts";
 import Table from "../components/DashboardTable";
-import './dashboard.scss'
-import axios from "axios";
+import './dashboard.scss';
 
 const first = data.emp;
 
