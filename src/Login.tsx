@@ -1,69 +1,3 @@
-// import React, { useState } from "react";
-// import { useAuth } from "./AuthContext";
-// import { useNavigate } from "react-router-dom";
-
-// import axios from "axios";
-
-// const Login = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const { login } = useAuth();
-//   const navigate = useNavigate();
-
-//   const authUser = async (email, password) => {
-//     try {
-//       const response = await axios.post('https://sih-test-server.vercel.app/api/v1/checkUser', {
-//         email,
-//         password,
-//       });
-//       console.log(response);
-//       return response.data; // Return response data
-//     } catch (error) {
-//       console.error("Error during authentication:", error);
-//       return null;
-//     }
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-    
-//     const authResponse = await authUser(email, password);
-
-//     if (authResponse && authResponse.success) {
-//       login(); // Set user as authenticated
-//       navigate("/admin/dashboard"); // Redirect to dashboard after login
-//     } else {
-//       alert("Authentication failed. Please check your email and password.");
-//     }
-//   };
-
-//   return (
-//     <div className="login-container">
-//       <h2>Login</h2>
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           type="email"
-//           placeholder="Email"
-//           value={email}
-//           onChange={(e) => setEmail(e.target.value)}
-//           required
-//         />
-//         <input
-//           type="password"
-//           placeholder="Password"
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//           required
-//         />
-//         <button type="submit">Login</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
-
 import React, { useState } from "react";
 import { useAuth } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -78,7 +12,7 @@ const Login = () => {
   const authUser = async (email, password) => {
     try {
       const response = await axios.post(
-        "https://sih-test-server.vercel.app/api/v1/checkUser",
+        "https://alpha-one-server.vercel.app/api/v1/checkUser",
         { email, password }
       );
       console.log(response);

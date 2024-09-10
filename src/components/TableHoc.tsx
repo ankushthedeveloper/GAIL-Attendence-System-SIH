@@ -18,7 +18,8 @@ function TableHoc<T extends object>(
   showPagination: boolean = false
 ) {
   return function TableComponent() {
-    const options: TableOptions<T> = {
+    // Ensure initialState is correctly typed
+    const options: TableOptions<T> & { initialState: Partial<{ pageSize: number }> } = {
       columns,
       data,
       initialState: {
@@ -42,7 +43,7 @@ function TableHoc<T extends object>(
 
     return (
       <div className={containerclass}>
-        <h2 className="heading">{heading} </h2>
+        <h2 className="heading">{heading}</h2>
         <table className="table" {...getTableProps()}>
           <thead>
             {headerGroups.map((headerGroup) => (
@@ -50,7 +51,6 @@ function TableHoc<T extends object>(
                 {headerGroup.headers.map((column) => (
                   <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                     {column.render("Header")}
-                    {"  "}{" "}
                     {column.isSorted && (
                       <span>
                         {column.isSortedDesc ? (
@@ -73,7 +73,7 @@ function TableHoc<T extends object>(
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => (
                     <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  ))}{" "}
+                  ))}
                 </tr>
               );
             })}
@@ -100,4 +100,3 @@ function TableHoc<T extends object>(
 }
 
 export default TableHoc;
-

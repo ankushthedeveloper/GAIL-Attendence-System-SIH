@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import AdminSidebar from "../components/AdminSidebar";
 import DeptTable from "../components/dept_table";
-import Loader from "../components/Loader";
 // import data from "../assets/data.json"; // This is not needed if you're using dynamic data
 
 const DeptPage = () => {
@@ -10,7 +9,7 @@ const DeptPage = () => {
   const department = location.state?.department; // Access the department object passed from the previous page
 
   if (!department) {
-    return <div><Loader/></div>;
+    return <div>Loading department details...</div>;
   }
 
   return (

@@ -23,10 +23,10 @@ const columns:Column<DataType>[]=[
         Header: "EmpName",
         accessor: "EmpName",
     },
-    {
-        Header: "Time",
-        accessor: "Time",
-    },
+    // {
+    //     Header: "WorkingHours",
+    //     accessor: "WorkingHours>",
+    // },
  
 ]
 

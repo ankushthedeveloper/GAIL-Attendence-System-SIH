@@ -21,7 +21,7 @@ const MyForm: React.FC<MyFormProps> = () => {
     setError(null);
 
     try {
-      const response = await axios.post('https://sih-test-server.vercel.app/api/department/createDepartment', {
+      const response = await axios.post('https://alpha-one-server.vercel.app/api/department/createDepartment', {
         name: inputValue,
         officeName: officeName,
       });

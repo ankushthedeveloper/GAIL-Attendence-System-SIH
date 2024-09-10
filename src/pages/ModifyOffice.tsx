@@ -149,7 +149,7 @@ const MyForm: React.FC<MyFormProps> = () => {
     setError(null);
 
     try {
-      const response = await axios.post('https://sih-test-server.vercel.app/api/department/createDepartment', {
+      const response = await axios.post('https://alpha-one-server.vercel.app/api/department/createDepartment', {
         name: inputValue,  // Department name
         officeName: officeName,  // Office name from search
       });
@@ -172,7 +172,7 @@ const MyForm: React.FC<MyFormProps> = () => {
     setError(null);
 
     try {
-      const response = await axios.post('https://sih-test-server.vercel.app/api/office/findofficename', {
+      const response = await axios.post('https://alpha-one-server.vercel.app/api/office/findofficename', {
         // params: {
         //   name: OfficeValue,
         // },
