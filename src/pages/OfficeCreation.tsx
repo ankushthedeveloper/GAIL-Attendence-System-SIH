@@ -281,7 +281,10 @@ import AdminSidebar from "../components/AdminSidebar";
 import { LatLngExpression, Map } from "leaflet";
 import "leaflet-control-geocoder"; 
 import './styles/OficeCreation.scss'; 
-import L from 'leaflet'
+import L from 'leaflet';
+import 'leaflet-control-geocoder/dist/Control.Geocoder.css'; 
+import 'leaflet-control-geocoder/dist/Control.Geocoder.js'
+
 
 interface OfficeState {
   name: string;
