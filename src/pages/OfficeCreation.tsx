@@ -9,24 +9,7 @@ import AdminSidebar from "../components/AdminSidebar";
 import { LatLngExpression, Map } from "leaflet";
 // import "leaflet-control-geocoder"; 
 import './styles/OficeCreation.scss'; 
-
-/*
-
-import axios from "axios";
-import 'leaflet/dist/leaflet.css';
-import 'leaflet-control-geocoder/dist/Control.Geocoder.js';  // Corrected import for Geocoder
-import 'leaflet-control-geocoder/dist/Control.Geocoder.css'; // CSS for the geocoder
-import { useEffect, useState, useRef } from "react";
-import { MapContainer, Marker, TileLayer, useMapEvents } from "react-leaflet";
-import { useNavigate } from "react-router-dom";
-import AdminSidebar from "../components/AdminSidebar";
-import { LatLngExpression, Map } from "leaflet";
-import './styles/OfficeCreation.scss'; // Correct file path for styles
-
-// Rest of your OfficeCreation component...
-
-
-*/ 
+import L from 'leaflet'; 
 
 interface OfficeState {
   name: string;
