@@ -7,4 +7,9 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['prop-types'],
   },
+  build: {
+    rollupOptions: {
+      external: ['leaflet-control-geocoder']
+    }
+  }
 })
