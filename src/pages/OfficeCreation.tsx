@@ -557,7 +557,6 @@
 
 
 
-import "leaflet-control-geocoder"; 
 import './styles/OficeCreation.scss'; 
 import L from 'leaflet'
 import axios from "axios"; 
@@ -566,8 +565,10 @@ import { useEffect, useState, useRef } from "react";
 import { MapContainer, Marker, TileLayer, useMapEvents } from "react-leaflet";
 import { useNavigate } from "react-router-dom";
 import AdminSidebar from "../components/AdminSidebar";
-import { LatLngExpression, Map } from "leaflet";
+import { LatLngExpression } from "leaflet";
 import './styles/OficeCreation.scss'; 
+import 'leaflet-control-geocoder/dist/Control.Geocoder.css'; 
+import 'leaflet-control-geocoder/dist/Control.Geocoder.js'
 
 interface OfficeState {
   name: string;
@@ -612,7 +613,7 @@ const OfficeCreation = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]); 
   const [showSuggestions, setShowSuggestions] = useState(false); 
-  const mapRef = useRef<Map | null>(null); 
+  const mapRef = useRef<L.Map | null>(null); 
   const navigate = useNavigate();
 
   useEffect(() => {
