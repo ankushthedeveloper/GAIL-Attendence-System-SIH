@@ -7,7 +7,7 @@ import { HiTrendingDown, HiTrendingUp } from "react-icons/hi";
 import userimg from "../assets/userfinal.png";
 import AdminSidebar from "../components/AdminSidebar";
 import {  PieChart } from "../components/Charts";
-import Table from "../components/DashboardTable";
+// import Table from "../components/DashboardTable";
 import './dashboard.scss';
 
 const gailProjects = [
@@ -36,7 +36,7 @@ const gailProjects = [
 const Dashboard = () => {
   const [data1, setData] = useState([]);
   const [genderData, setGenderData] = useState();
-  const [liveStats, setLiveStats] = useState([]);
+  // const [liveStats, setLiveStats] = useState([]);
 
   const departments = ["HR", "Engineering", "Marketing", "Sales"];
   const departmentDistribution = [15, 35, 25, 25]; // Example distribution
@@ -49,8 +49,8 @@ const Dashboard = () => {
       const genderResponse = await axios.get("https://alpha-one-server.vercel.app/api/v1/getGenderCounts");
       setGenderData(genderResponse.data.data);
 
-      const liveStatsResponse = await axios.get("https://alpha-one-server.vercel.app/api/v1/admin/getRecentlyCheckedInEmployees");
-      setLiveStats(liveStatsResponse.data.transaction);
+      // const liveStatsResponse = await axios.get("https://alpha-one-server.vercel.app/api/v1/admin/getRecentlyCheckedInEmployees");
+      // setLiveStats(liveStatsResponse.data.transaction);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -140,7 +140,7 @@ const Dashboard = () => {
             />
             <BiMaleFemale />
           </div>
-          <Table data={liveStats} />
+          {/* <Table data={liveStats} /> */}
         </section>
       </main>
     </div>
