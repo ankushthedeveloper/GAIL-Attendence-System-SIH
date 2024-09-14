@@ -122,7 +122,7 @@ const Dashboard = () => {
               <CategoryItem
                 key={c.name}
                 heading={c.name}
-                value={(c.CheckedINemployees.length / c.employees.length) * 100}
+                value={parseFloat(((c.CheckedINemployees.length / c.employees.length) * 100).toFixed(2))}
                 color={`hsl(${(parseInt(c.CheckedINemployees.length )/parseInt (c.employees.length) * 100) * 4}, ${parseInt(c.CheckedINemployees.length )/ (c.employees.length) * 100}%, 50%)`}
               />
             ))}
