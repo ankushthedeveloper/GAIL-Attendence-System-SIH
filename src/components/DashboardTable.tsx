@@ -7,6 +7,7 @@ interface DataType{
     office:string,
     EmpName:number,
     Time:string,
+ 
 } 
 
 

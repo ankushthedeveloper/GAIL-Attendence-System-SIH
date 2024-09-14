@@ -71,7 +71,7 @@ import React, { useEffect, useState } from 'react';
 import Office_page from '../../components/Office_page';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import Loader from '../../components/Loader';
+import Loader, { Skeleton } from '../../components/Loader';
 
 
 // Define the type for Office data
@@ -127,7 +127,7 @@ const Offices: React.FC = () => {
 
   return (
     <div>
-      {data && (
+      {data ? (
         <Office_page
           officeid={data._id}
           name={data.name}
@@ -136,7 +136,7 @@ const Offices: React.FC = () => {
           checkedInEmployees={data.CheckedINemployees?.length || 0} // Default to 0 if CheckedINemployees is null
           departments={data.departments || []} // Default to an empty array if departments is null
         />
-      )}
+      ) : <Skeleton width='20'/>}
     </div>
   );
 };

@@ -82,7 +82,7 @@ const Dashboard = () => {
           {data1.map((i) => (
             <WidgetItem
               heading={i.name}
-              percents={((i.CheckedINemployees.length / i.employees.length) * 100)}
+              percents={parseFloat(((i.CheckedINemployees.length / i.employees.length) * 100).toFixed(2))}
               amount={true}
               value={i.CheckedINemployees.length > 0 ? i.CheckedINemployees.length : 0}
               color="rgb(0,115,255)"

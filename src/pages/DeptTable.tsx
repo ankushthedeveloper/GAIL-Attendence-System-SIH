@@ -15,15 +15,13 @@ const DeptPage = () => {
   return (
     <div className="AdminContainer">
       <AdminSidebar />
-      <main>
-        <h1>Department: {department.name}</h1>
-        <p>Department ID: {department._id}</p>
-        <p>Office: {department.office}</p>
-        <p>Total Employees: {department.employees.length}</p>
-        {/* Pass the department's employees to the DeptTable if required */}
-        {/* <DeptTable data={department.employees} /> */}
-        <DeptTable data={department.employees} deptId={department._id} />
-      </main>
+  <main>
+    <h1>Department: {department.name}</h1>
+    <p>Department ID: {department._id}</p>
+    <p>Office: {department.office}</p>
+    <p>Total Employees: {department.employees.length}</p>
+    <DeptTable data={department.employees} deptId={department._id} />
+  </main>
     </div>
   );
 };

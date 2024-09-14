@@ -122,10 +122,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import './Login.scss'; // Import the SCSS file
+import { Skeleton } from "./components/Loader";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [click,setclick]=useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -138,6 +140,7 @@ const Login = () => {
       console.log(response);
       return response.data;
     } catch (error) {
+      setclick(false);
       console.error("Error during authentication:", error);
       return null;
     }
@@ -145,6 +148,8 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    setclick(true); 
     const authResponse = await authUser(email, password);
 
     if (authResponse && authResponse.success) {
@@ -175,9 +180,11 @@ const Login = () => {
           required
           className="login-input"
         />
-        <button type="submit" className="login-button">
-          Login
-        </button>
+     {!click? <button type="submit" className="login-button">
+         Login
+        </button>: <div className="loginLoad">
+        <Skeleton/>
+          </div>}
       </form>
     </div>
   );
