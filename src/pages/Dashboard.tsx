@@ -17,17 +17,17 @@ const gailProjects = [
     team: 20,
   },
   {
-    projectName: "New Gas Station Installation",
+    projectName: "Station Installation",
     progress: 45,
     team: 10,
   },
   {
-    projectName: "Smart Grid Implementation",
+    projectName: "Grid Implementation",
     progress: 60,
     team: 25,
   },
   {
-    projectName: "Carbon Emission Reduction",
+    projectName: "C02 Emission Reduction",
     progress: 30,
     team: 15,
   },
@@ -127,6 +127,7 @@ const Dashboard = () => {
               />
             ))}
           </div>
+
         </section>
 
         <section className="transactionContainer">
