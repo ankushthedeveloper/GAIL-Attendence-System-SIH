@@ -1,12 +1,9 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-import { AuthProvider } from "./AuthContext"; // Import the context
 
 import Loader from "./components/Loader";
-import Login from "./Login";
 
-import ProtectedRoute from "./ProtectedRoute"; // Import the protected route
 
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const DeptTable = lazy(() => import("./pages/DeptTable"));
@@ -19,15 +16,15 @@ const Offices = lazy(() => import("./pages/Offices/Offices"));
 
 const App = () => {
   return (
-    <AuthProvider>
+    // <AuthProvider>
       <Router>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/" element={<Navigate to="/login" />} /> {/* Redirect to login */}
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Navigate to="admin/dashboard" />} /> {/* Redirect to login */}
+            {/* <Route path="/login" element={<Login />} /> */}
 
             {/* Protected Routes */}
-            <Route element={<ProtectedRoute />}>
+            {/* <Route element={<ProtectedRoute />}> */}
               <Route path="/admin/dashboard" element={<Dashboard />} />
               <Route path="/office/:id" element={<Offices />} />
               <Route path="/create-office" element={<OfficeCreation />} />
@@ -38,11 +35,11 @@ const App = () => {
               <Route path="/employee-records" element={<EmployeeRecords />} />
               <Route path="/dept-info/:departmentName" element={<DeptTable />} />
 
-            </Route>
+            {/* </Route> */}
           </Routes>
         </Suspense>
-      </Router>
-    </AuthProvider>
+       </Router>
+    // </AuthProvider>
    
   
   
