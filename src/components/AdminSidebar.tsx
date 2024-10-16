@@ -57,7 +57,6 @@ const AdminSidebar = () => {
     axios
       .get("https://alpha-one-server.vercel.app/api/office/getAllOffices")
       .then((response) => {
-        console.log("response.data.office2:", response.data.offices);
         setData(response.data.offices);
       })
       .catch((error) => {
@@ -125,7 +124,7 @@ const DivTwo = ({ location, data2 }: DivTwoProps) => (
         <Li
           key={office._id}
           url={`/office/${office._id}`}
-          text={office.name.toUpperCase()}
+          text={office.name}
           Icon={FaCity}
           location={location}
         />

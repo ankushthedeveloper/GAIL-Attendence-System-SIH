@@ -146,8 +146,7 @@ const OfficeCreation = () => {
           }
         }
       )
-      .then((response) => {
-        console.log('Office created:', response.data);
+      .then(() => {
         navigate('/dept-creation', { state: { officeName: office.name } });
       })
       .catch((error) => {
